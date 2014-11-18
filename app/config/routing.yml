@@ -1,0 +1,5 @@
+polcode_mpk:
+    resource: "@PolcodeMpkBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

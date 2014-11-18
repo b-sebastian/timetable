@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>Tablica Przystankow</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <!-- Bootstrap -->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+
+    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+    
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="header text-center">
+                <h1>Tablica przystankow MPK Krakow</h1>
+            </div>
+
+            {% for item in stops %}
+                {{ item }}<br>
+            {% endfor %}
+            
+        </div>    
+    </div>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/angular.min.js') }}"></script>
+    <script>
+    var searchApp = angular.module('searchApp', []);
+
+    searchApp.config(function($interpolateProvider) {
+      $interpolateProvider.startSymbol('{[{');
+      $interpolateProvider.endSymbol('}]}');
+    });
+    </script>
+</body>
+</html>

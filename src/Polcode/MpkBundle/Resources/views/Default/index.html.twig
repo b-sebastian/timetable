@@ -1,0 +1,61 @@
+<!-- src/Acme/DemoBundle/Resources/views/layout.html.twig -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Tablica Przystankow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+
+    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+    
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="header text-center">
+                <h1>Tablica przystankow MPK Krakow</h1>
+            </div>
+
+            <div class="col-xs-4" ng-app="searchApp">
+                <div ng-init="friends = [
+                    {name:'John', phone:'555-1276'},
+                    {name:'Mary', phone:'800-BIG-MARY'},
+                    {name:'Mike', phone:'555-4321'},
+                    {name:'Adam', phone:'555-5678'},
+                    {name:'Julie', phone:'555-8765'},
+                    {name:'Juliette', phone:'555-5678'}]">
+                </div>
+
+                Search: <input ng-model="searchText">
+                <div id="searchTextResults">
+                    <div>Wybierz przystanek</div>
+                    <div ng-repeat="friend in friends | filter:searchText">
+                        <div>{[{friend.name}]}</div>
+                        <div>{[{friend.phone}]}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xs-8">
+                col2
+            </div>
+        </div>    
+    </div>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/angular.min.js') }}"></script>
+    <script>
+    var searchApp = angular.module('searchApp', []);
+
+    searchApp.config(function($interpolateProvider) {
+      $interpolateProvider.startSymbol('{[{');
+      $interpolateProvider.endSymbol('}]}');
+    });
+    </script>
+</body>
+</html>

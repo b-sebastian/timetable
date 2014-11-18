@@ -1,0 +1,7 @@
+# src/Polcode/MpkBundle/Resources/config/services.yml
+parameters:
+    link_editor.class:  Polcode\MpkBundle\Link_editor
+
+services:
+    link_editor:
+        class:        "%link_editor.class%"
