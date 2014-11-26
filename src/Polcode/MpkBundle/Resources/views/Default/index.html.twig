@@ -35,8 +35,8 @@
                 <div id="searchTextResults">
                     <div>Wybierz przystanek</div>
                     <div ng-repeat="friend in friends | filter:searchText">
-                        <div>{[{friend.name}]}</div>
-                        <div>{[{friend.phone}]}</div>
+                        <div><< friend.name >></div>
+                        <div><< friend.phone >></div>
                     </div>
                 </div>
             </div>
@@ -53,8 +53,8 @@
     var searchApp = angular.module('searchApp', []);
 
     searchApp.config(function($interpolateProvider) {
-      $interpolateProvider.startSymbol('{[{');
-      $interpolateProvider.endSymbol('}]}');
+      $interpolateProvider.startSymbol('<<');
+      $interpolateProvider.endSymbol('>>');
     });
     </script>
 </body>

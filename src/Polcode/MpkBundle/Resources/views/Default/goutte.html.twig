@@ -20,7 +20,7 @@
             </div>
 
             {% for item in stops %}
-                {{ item }}<br>
+                {{ item["name"] }}<br>
             {% endfor %}
             
         </div>    
@@ -32,8 +32,8 @@
     var searchApp = angular.module('searchApp', []);
 
     searchApp.config(function($interpolateProvider) {
-      $interpolateProvider.startSymbol('{[{');
-      $interpolateProvider.endSymbol('}]}');
+      $interpolateProvider.startSymbol('<<');
+      $interpolateProvider.endSymbol('>>');
     });
     </script>
 </body>
