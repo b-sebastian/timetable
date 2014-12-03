@@ -1,6 +1,6 @@
 <?php
 
-namespace Polcode\MpkBundle\Services\LinkService;
+namespace Polcode\MpkBundle\Services;
 
 class Link
 {
